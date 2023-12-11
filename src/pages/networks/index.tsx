@@ -33,7 +33,7 @@ export function Networks() {
     }, [currentUser]);
 
     function loadLinks() {
-        getDoc(doc(db, 'social', 'links'))
+        getDoc(doc(db, 'social', `${currentUser}`))
             .then((snapshot) => {
                 if (snapshot.data() !== undefined) {
                     setFacebook(snapshot.data()?.facebook)
@@ -49,7 +49,7 @@ export function Networks() {
     function handleRegister(e: FormEvent) {
         e.preventDefault();
 
-        setDoc(doc(db, 'social', 'links'), {
+        setDoc(doc(db, 'social', `${currentUser}`), {
             facebook: facebook,
             instagram: instagram,
             youtube: youtube,
