@@ -27,7 +27,6 @@ export function Header() {
     async function handleLogout() {
         signOut(auth);
     }
-
     return (
         <header className='w-full max-w-2xl mt-4 px-1'>
             <nav className='w-full bg-white h-12 flex items-center justify-between rounded-md px-3'>
