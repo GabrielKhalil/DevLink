@@ -8,6 +8,7 @@ import { Admin } from "./pages/admin";
 import { Networks } from "./pages/networks";
 import { Cadastro } from "./pages/cadastro";
 import { Private } from "./routes/Private";
+import { ErrorPage } from "./pages/error";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       </div>
     ),
   },
+  {
+    path: "*",
+    element:<ErrorPage/>
+  }
 ]);
 
 export { router };
